@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Select-menu</title>
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <div class="hero">
+          <div class="selectors">
+               <div id="select">
+                    <p id="text">Select The Deperment</p>
+                    <img src="./im/angle-down-solid.svg" alt="" id="arro">
+               </div>
+               <ul id="list" class="hide">
+                    <li class="options">
+                         <p>EEE</p>
+                    </li>
+                    <li class="options">
+                         <p>CSE</p>
+                    </li>
+                    <li class="options">
+                         <p>CIVIL</p>
+                    </li>
+                    <li class="options">
+                         <p>BBA</p>
+                    </li>
+                    <li class="options">
+                         <p>LLB</p>
+                    </li>
+                    <li class="options">
+                         <p>MASTER</p>
+                    </li>
+               </ul>
+          </div>
+          
+     </div>
+     
+      
+     <script>
+          var select = document.getElementById("select");
+          var selectext = document.getElementById("text");
+          var options = document.getElementsByClassName("options");
+          var list = document.getElementById("list");
+          var arro = document.getElementById("arro");
+
+          select.onclick = function(){
+               list.classList.toggle("hide");
+               arro.classList.toggle("rotate");
+          }
+           
+          for(option of options){
+               option.onclick= function(){
+                    selectext.innerHTML = this.textContent;
+                    list.classList.toggle("hide");
+                    arro.classList.toggle("rotate");
+               }
+          }
+          
+              
+     </script>
+</body>
+</html>
